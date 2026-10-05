@@ -54,16 +54,16 @@ class _TelaProdutoState extends State<TelaProduto> {
       '{"nome": "Notebook Gamer", "preco": 4599.90, "disponivel": true}';
 
   Future<void> _recarregar() async {
-    setState(() => _carregando = true); // liga o loading
+    setState(() => _carregando = true); 
 
-    await Future.delayed(const Duration(seconds: 2)); // simula a internet
+    await Future.delayed(const Duration(seconds: 2)); 
 
     final Map<String, dynamic> mapa = jsonDecode(_jsonSimulado);
     final produto = Produto.fromJson(mapa);
 
     setState(() {
       _produto = produto;
-      _carregando = false; // desliga o loading
+      _carregando = false; 
     });
   }
 
